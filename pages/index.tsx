@@ -16,6 +16,7 @@ export default function Home() {
 	const [playerData, setPlayerData] = useState({});
 	const [player2Data, setPlayer2Data] = useState({});
 	const [loading, setLoading] = useState(true);
+
 	return (
 		<>
 			<header>
@@ -29,30 +30,34 @@ export default function Home() {
 				</form>
 			</header>
 			<main>
-				<section className="cards">
-					<div className="card first">
-						<h3 className="title">PlayerTag</h3>
-						<h5 className="info">PlayerName</h5>
-						<h5 className="info">PlayerXP</h5>
-						<h5 className="info">PlayerTrophies</h5>
-						<h1 className="ratio">DonationsRatio</h1>
-						<div className="ratios">
-							<p className="calc">Donations</p>
-							<p className="calc">DonationsReceived</p>
+				{loading ? (
+					<h3 className="loader">Calculating...</h3>
+				) : (
+					<section className="cards">
+						<div className="card first">
+							<h3 className="title">PlayerTag</h3>
+							<h5 className="info">PlayerName</h5>
+							<h5 className="info">PlayerXP</h5>
+							<h5 className="info">PlayerTrophies</h5>
+							<h1 className="ratio">DonationsRatio</h1>
+							<div className="ratios">
+								<p className="calc">Donations</p>
+								<p className="calc">DonationsReceived</p>
+							</div>
 						</div>
-					</div>
-					<div className="card second">
-						<h3 className="title">PlayerTag</h3>
-						<h5 className="info">PlayerName</h5>
-						<h5 className="info">PlayerXP</h5>
-						<h5 className="info">PlayerTrophies</h5>
-						<h1 className="ratio">DonationsRatio</h1>
-						<div className="ratios">
-							<p className="calc">Donations</p>
-							<p className="calc">DonationsReceived</p>
+						<div className="card second">
+							<h3 className="title">PlayerTag</h3>
+							<h5 className="info">PlayerName</h5>
+							<h5 className="info">PlayerXP</h5>
+							<h5 className="info">PlayerTrophies</h5>
+							<h1 className="ratio">DonationsRatio</h1>
+							<div className="ratios">
+								<p className="calc">Donations</p>
+								<p className="calc">DonationsReceived</p>
+							</div>
 						</div>
-					</div>
-				</section>
+					</section>
+				)}
 			</main>
 		</>
 	);

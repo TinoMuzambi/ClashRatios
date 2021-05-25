@@ -72,7 +72,9 @@ header {
 	gap: 2rem;
 
 	.card {
-		background: white;
+		background: $champions;
+		color: white;
+		border: 5px solid $gold;
 		padding: 2rem;
 		clip-path: polygon(
 			16% 0,
@@ -97,6 +99,11 @@ header {
 				0% 80%,
 				0 19%
 			);
+		}
+
+		.ratio {
+			color: $titan;
+			font-size: 3.5rem;
 		}
 
 		.ratios {
