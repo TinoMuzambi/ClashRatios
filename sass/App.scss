@@ -98,6 +98,16 @@ main {
 				1% 19%
 			);
 
+			&.first {
+				&.winner {
+					transform: scale(1.5) translate(-2rem, 2rem);
+				}
+
+				&.loser {
+					transform: translate(-2rem, 2rem);
+				}
+			}
+
 			&.second {
 				clip-path: polygon(
 					0 0,
@@ -109,14 +119,14 @@ main {
 					0% 80%,
 					0 19%
 				);
-			}
 
-			&.winner {
-				transform: scale(1.5) translate(-2rem, 2rem);
-			}
+				&.winner {
+					transform: scale(1.5) translate(2rem, 2rem);
+				}
 
-			&.loser {
-				transform: translate(2rem, 2rem);
+				&.loser {
+					transform: translate(2rem, 2rem);
+				}
 			}
 
 			.ratio {

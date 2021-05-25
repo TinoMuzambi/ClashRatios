@@ -1,4 +1,4 @@
-import { GetStaticProps } from "next";
+// import { GetStaticProps } from "next";
 import { useState, useEffect } from "react";
 
 type PlayerData = {
@@ -20,12 +20,34 @@ export default function Home() {
 	const [loading, setLoading] = useState<Boolean>(true);
 	const [fetching, setFetching] = useState<Boolean>(false);
 
-	// useEffect(() => {
-	// 	const timer = setTimeout(() => {
-	// 		setLoading(false);
-	// 	}, 3000);
-	// 	return () => clearTimeout(timer);
-	// }, []);
+	useEffect(() => {
+		let timer: any;
+		if (!loading) {
+			const playerRatio = playerData.donationsReceived / playerData.donations;
+			const player2Ratio =
+				player2Data.donationsReceived / player2Data.donations;
+			timer = setTimeout(() => {
+				if (playerRatio < player2Ratio) {
+					document.querySelectorAll(".card").forEach((el) => {
+						if (el.classList.contains("first")) {
+							el.classList.add("winner");
+						} else {
+							el.classList.add("loser");
+						}
+					});
+				} else {
+					document.querySelectorAll(".card").forEach((el) => {
+						if (el.classList.contains("first")) {
+							el.classList.add("loser");
+						} else {
+							el.classList.add("winner");
+						}
+					});
+				}
+			}, 2000);
+		}
+		return () => clearTimeout(timer);
+	}, [loading]);
 
 	const submitHandler = async (e: any) => {
 		e.preventDefault();
@@ -96,7 +118,7 @@ export default function Home() {
 						<h3 className="loader">Calculating...</h3>
 					) : (
 						<section className="cards">
-							<div className="card first winner">
+							<div className="card first">
 								<h3 className="title">{playerData.tag}</h3>
 								<h5 className="info">{playerData.name}</h5>
 								<h5 className="info">{playerData.xp}</h5>
@@ -126,7 +148,7 @@ export default function Home() {
 									</p>
 								</div>
 							</div>
-							<div className="card second loser">
+							<div className="card second">
 								<h3 className="title">{player2Data.tag}</h3>
 								<h5 className="info">{player2Data.name}</h5>
 								<h5 className="info">{player2Data.xp}</h5>
