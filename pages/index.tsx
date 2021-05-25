@@ -26,8 +26,35 @@ export default function Home() {
 		return () => clearTimeout(timer);
 	}, []);
 
-	const submitHandler = (e: any) => {
+	const submitHandler = async (e: any) => {
 		e.preventDefault();
+		setLoading(true);
+		let tag = playerTag.trim();
+		tag = tag.replace("#", "");
+		let URL = `https://clash-ratios.herokuapp.com/api/player/${tag}`;
+		try {
+			const result = await fetch(URL);
+			const data = await result.json();
+			setPlayerData(data);
+		} catch (error) {
+			console.error(error);
+			alert("Please try a different tag.");
+		} finally {
+			setLoading(false);
+		}
+		tag = player2Tag.trim();
+		tag = tag.replace("#", "");
+		URL = `https://clash-ratios.herokuapp.com/api/player/${tag}`;
+		try {
+			const result = await fetch(URL);
+			const data = await result.json();
+			setPlayer2Data(data);
+		} catch (error) {
+			console.error(error);
+			alert("Please try a different tag.");
+		} finally {
+			setLoading(false);
+		}
 	};
 
 	return (
