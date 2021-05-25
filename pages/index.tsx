@@ -92,7 +92,12 @@ export default function Home() {
 							<h3 className="title">{playerData.tag}</h3>
 							<h5 className="info">{playerData.name}</h5>
 							<h5 className="info">{playerData.expLevel}</h5>
-							<h5 className="info">{playerData.trophies}</h5>
+							<h5 className="info">
+								{playerData.trophies}{" "}
+								<span role="img" aria-label="trophy">
+									🏆
+								</span>
+							</h5>
 							<h1 className="ratio">
 								{(playerData.donations / playerData.donationsReceived).toFixed(
 									2
@@ -107,7 +112,12 @@ export default function Home() {
 							<h3 className="title">{player2Data.tag}</h3>
 							<h5 className="info">{player2Data.name}</h5>
 							<h5 className="info">{player2Data.expLevel}</h5>
-							<h5 className="info">{player2Data.trophies}</h5>
+							<h5 className="info">
+								{player2Data.trophies}{" "}
+								<span role="img" aria-label="trophy">
+									🏆
+								</span>
+							</h5>
 							<h1 className="ratio">
 								{(
 									player2Data.donations / player2Data.donationsReceived
