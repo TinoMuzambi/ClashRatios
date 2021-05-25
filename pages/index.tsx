@@ -80,7 +80,12 @@ export default function Home() {
 							onChange={(e) => setPlayer2Tag(e.target.value)}
 						/>
 					</div>
-					<button type="submit">Compare Ratios!🥊</button>
+					<button type="submit">
+						Compare Ratios!
+						<span role="img" aria-label="boxing glove">
+							🥊
+						</span>
+					</button>
 				</form>
 			</header>
 			<main>
