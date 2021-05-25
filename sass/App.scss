@@ -26,8 +26,6 @@ body {
 }
 
 header {
-	margin: 2rem 0;
-
 	.form {
 		display: flex;
 		flex-direction: column;
@@ -36,6 +34,7 @@ header {
 
 		.inputs {
 			display: flex;
+			align-items: center;
 			gap: 1rem;
 
 			input {
@@ -43,8 +42,16 @@ header {
 				outline: none;
 				padding: 1rem;
 				font-family: inherit;
-				width: min-content;
 			}
+		}
+
+		button {
+			margin: 1rem 0 2rem 0;
+			border: none;
+			outline: none;
+			padding: 1rem;
+			font-family: inherit;
+			cursor: pointer;
 		}
 	}
 }
