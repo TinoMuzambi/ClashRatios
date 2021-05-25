@@ -109,8 +109,18 @@ export default function Home() {
 								)}
 							</h1>
 							<div className="ratios">
-								<p className="calc">{playerData.donations}</p>
-								<p className="calc">{playerData.donationsReceived}</p>
+								<p className="calc">
+									{playerData.donations}{" "}
+									<span role="img" aria-label="up">
+										👆
+									</span>
+								</p>
+								<p className="calc">
+									{playerData.donationsReceived}{" "}
+									<span role="img" aria-label="down">
+										👇
+									</span>
+								</p>
 							</div>
 						</div>
 						<div className="card second">
@@ -129,8 +139,18 @@ export default function Home() {
 								).toFixed(2)}
 							</h1>
 							<div className="ratios">
-								<p className="calc">{player2Data.donations}</p>
-								<p className="calc">{player2Data.donationsReceived}</p>
+								<p className="calc">
+									{player2Data.donations}{" "}
+									<span role="img" aria-label="up">
+										👆
+									</span>
+								</p>
+								<p className="calc">
+									{player2Data.donationsReceived}{" "}
+									<span role="img" aria-label="down">
+										👇
+									</span>
+								</p>
 							</div>
 						</div>
 					</section>
