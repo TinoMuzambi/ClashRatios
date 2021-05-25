@@ -1,7 +1,14 @@
 import { GetStaticProps } from 'next'
 
 type Props = {
-    data: any
+    data: {
+      tag: string,
+      name: string,
+      explevel: number,
+      trophies: number,
+      donations: number,
+      donationsReceived: number
+    }
   }
 
 export default function Home({data} : Props) {
