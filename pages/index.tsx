@@ -96,7 +96,7 @@ export default function Home() {
 						<h3 className="loader">Calculating...</h3>
 					) : (
 						<section className="cards">
-							<div className="card first">
+							<div className="card first winner">
 								<h3 className="title">{playerData.tag}</h3>
 								<h5 className="info">{playerData.name}</h5>
 								<h5 className="info">{playerData.xp}</h5>
@@ -126,7 +126,7 @@ export default function Home() {
 									</p>
 								</div>
 							</div>
-							<div className="card second">
+							<div className="card second loser">
 								<h3 className="title">{player2Data.tag}</h3>
 								<h5 className="info">{player2Data.name}</h5>
 								<h5 className="info">{player2Data.xp}</h5>

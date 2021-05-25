@@ -111,6 +111,14 @@ main {
 				);
 			}
 
+			&.winner {
+				transform: scale(1.5) translate(-2rem, 2rem);
+			}
+
+			&.loser {
+				transform: translate(2rem, 2rem);
+			}
+
 			.ratio {
 				color: $titan;
 				font-size: 3.5rem;
