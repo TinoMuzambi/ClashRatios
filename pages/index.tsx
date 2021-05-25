@@ -2,14 +2,12 @@
 import { useState, useEffect } from "react";
 
 type PlayerData = {
-	data: {
-		tag: string;
-		name: string;
-		xp: number;
-		trophies: number;
-		donations: number;
-		donationsReceived: number;
-	};
+	tag: string;
+	name: string;
+	xp: number;
+	trophies: number;
+	donations: number;
+	donationsReceived: number;
 };
 
 export default function Home() {
