@@ -13,6 +13,8 @@ type Props = {
 };
 
 export default function Home() {
+	const [playerTag, setPlayerTag] = useState("");
+	const [player2Tag, setPlayer2Tag] = useState("");
 	const [playerData, setPlayerData] = useState({});
 	const [player2Data, setPlayer2Data] = useState({});
 	const [loading, setLoading] = useState(true);
@@ -33,9 +35,25 @@ export default function Home() {
 			<header>
 				<form className="form" onSubmit={submitHandler}>
 					<div className="inputs">
-						<input type="text" required placeholder="Enter player 1️⃣ tag " />
+						<input
+							type="text"
+							required
+							minLength={8}
+							maxLength={9}
+							placeholder="Enter player 1️⃣ tag "
+							value={playerTag}
+							onChange={(e) => setPlayerTag(e.target.value)}
+						/>
 						<p className="vs">vs</p>
-						<input type="text" required placeholder="Enter player 2️⃣ tag " />
+						<input
+							type="text"
+							required
+							minLength={8}
+							maxLength={9}
+							placeholder="Enter player 2️⃣ tag "
+							value={player2Tag}
+							onChange={(e) => setPlayer2Tag(e.target.value)}
+						/>
 					</div>
 					<button type="submit">Compare Ratios!🥊</button>
 				</form>
