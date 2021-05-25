@@ -122,6 +122,7 @@ main {
 
 				&.winner {
 					transform: scale(1.5) translate(2rem, 2rem);
+					box-shadow: 0 0 10px 10px rgba($color: white, $alpha: 0.4);
 				}
 
 				&.loser {
