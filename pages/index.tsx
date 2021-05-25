@@ -35,7 +35,7 @@ export default function Home() {
          <div className="ratios"><p className="calc">Donations</p>
          <p className="calc">DonationsReceived</p></div>
        </div>
-       <div className="card first">
+       <div className="card second">
          <h3 className="title">PlayerTag</h3>
          <h5 className="info">PlayerName</h5>
          <h5 className="info">PlayerXP</h5>
