@@ -13,11 +13,11 @@ type Props = {
 };
 
 export default function Home() {
-	const [playerTag, setPlayerTag] = useState("");
-	const [player2Tag, setPlayer2Tag] = useState("");
-	const [playerData, setPlayerData] = useState({});
-	const [player2Data, setPlayer2Data] = useState({});
-	const [loading, setLoading] = useState(true);
+	const [playerTag, setPlayerTag] = useState<string>("");
+	const [player2Tag, setPlayer2Tag] = useState<string>("");
+	const [playerData, setPlayerData] = useState<Props | {}>({});
+	const [player2Data, setPlayer2Data] = useState<Props | {}>({});
+	const [loading, setLoading] = useState<Boolean>(true);
 
 	// useEffect(() => {
 	// 	const timer = setTimeout(() => {
@@ -89,7 +89,7 @@ export default function Home() {
 				) : (
 					<section className="cards">
 						<div className="card first">
-							<h3 className="title">PlayerTag</h3>
+							<h3 className="title">{playerData.tag}</h3>
 							<h5 className="info">PlayerName</h5>
 							<h5 className="info">PlayerXP</h5>
 							<h5 className="info">PlayerTrophies</h5>
@@ -117,22 +117,22 @@ export default function Home() {
 	);
 }
 
-export const getStaticProps: GetStaticProps = async () => {
-	let res;
-	let tag = "L98JC2LG";
-	tag = tag.replace("#", "");
-	const URL = `https://clash-ratios.herokuapp.com/api/player/${tag}`;
-	try {
-		const result = await fetch(URL);
-		res = await result.json();
-	} catch (error) {
-		console.error(error);
-		alert("Please try a different tag.");
-	} finally {
-	}
-	return {
-		props: {
-			data: res,
-		},
-	};
-};
+// export const getStaticProps: GetStaticProps = async () => {
+// 	let res;
+// 	let tag = "L98JC2LG";
+// 	tag = tag.replace("#", "");
+// 	const URL = `https://clash-ratios.herokuapp.com/api/player/${tag}`;
+// 	try {
+// 		const result = await fetch(URL);
+// 		res = await result.json();
+// 	} catch (error) {
+// 		console.error(error);
+// 		alert("Please try a different tag.");
+// 	} finally {
+// 	}
+// 	return {
+// 		props: {
+// 			data: res,
+// 		},
+// 	};
+// };
