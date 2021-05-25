@@ -67,48 +67,60 @@ header {
 	}
 }
 
-.cards {
+main {
 	display: flex;
-	gap: 2rem;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
 
-	.card {
-		background: $champions;
-		color: white;
-		border: 5px solid $gold;
-		padding: 2rem;
-		clip-path: polygon(
-			16% 0,
-			100% 0,
-			100% 20%,
-			100% 80%,
-			84% 100%,
-			0 100%,
-			0% 80%,
-			1% 19%
-		);
-		text-align: center;
+	.loader {
+		color: $bronze;
+		font-size: 3rem;
+	}
 
-		&.second {
+	.cards {
+		display: flex;
+		gap: 2rem;
+
+		.card {
+			background: $champions;
+			color: white;
+			border: 5px solid $gold;
+			padding: 2rem;
 			clip-path: polygon(
-				0 0,
-				82% 0,
+				16% 0,
+				100% 0,
 				100% 20%,
 				100% 80%,
-				100% 100%,
-				22% 100%,
+				84% 100%,
+				0 100%,
 				0% 80%,
-				0 19%
+				1% 19%
 			);
-		}
 
-		.ratio {
-			color: $titan;
-			font-size: 3.5rem;
-		}
+			&.second {
+				clip-path: polygon(
+					0 0,
+					82% 0,
+					100% 20%,
+					100% 80%,
+					100% 100%,
+					22% 100%,
+					0% 80%,
+					0 19%
+				);
+			}
 
-		.ratios {
-			display: flex;
-			gap: 1rem;
+			.ratio {
+				color: $titan;
+				font-size: 3.5rem;
+			}
+
+			.ratios {
+				display: flex;
+				justify-content: center;
+				gap: 1rem;
+			}
 		}
 	}
 }

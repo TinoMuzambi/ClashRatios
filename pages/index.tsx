@@ -1,5 +1,5 @@
 import { GetStaticProps } from "next";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 type Props = {
 	data: {
@@ -16,6 +16,13 @@ export default function Home() {
 	const [playerData, setPlayerData] = useState({});
 	const [player2Data, setPlayer2Data] = useState({});
 	const [loading, setLoading] = useState(true);
+
+	useEffect(() => {
+		const timer = setTimeout(() => {
+			setLoading(false);
+		}, 3000);
+		return () => clearTimeout(timer);
+	}, []);
 
 	return (
 		<>
