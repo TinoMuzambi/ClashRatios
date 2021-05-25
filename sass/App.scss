@@ -101,6 +101,7 @@ main {
 			&.first {
 				&.winner {
 					transform: scale(1.5) translate(-2rem, 2rem);
+					animation: flex 3s infinite alternate;
 				}
 
 				&.loser {
@@ -122,7 +123,8 @@ main {
 
 				&.winner {
 					transform: scale(1.5) translate(2rem, 2rem);
-					box-shadow: 0 0 10px 10px rgba($color: white, $alpha: 0.4);
+
+					animation: flex 3s infinite alternate;
 				}
 
 				&.loser {
@@ -141,5 +143,16 @@ main {
 				gap: 1rem;
 			}
 		}
+	}
+}
+
+@keyframes flex {
+	from {
+		background: $champions;
+		border-color: $gold;
+	}
+	to {
+		background: rgb(255, 124, 80);
+		border-color: $titan;
 	}
 }
