@@ -117,8 +117,8 @@ export default function Home() {
 					) : (
 						<section className="cards">
 							<div className="card first">
-								<h3 className="title">{playerData.tag}</h3>
-								<h5 className="info">{playerData.name}</h5>
+								<h3 className="title bold">{playerData.tag}</h3>
+								<h3 className="info bold">{playerData.name}</h3>
 								<h5 className="info">{playerData.xp}</h5>
 								<h5 className="info">
 									{playerData.trophies}{" "}
@@ -147,8 +147,8 @@ export default function Home() {
 								</div>
 							</div>
 							<div className="card second">
-								<h3 className="title">{player2Data.tag}</h3>
-								<h5 className="info">{player2Data.name}</h5>
+								<h3 className="title bold">{player2Data.tag}</h3>
+								<h3 className="info bold">{player2Data.name}</h3>
 								<h5 className="info">{player2Data.xp}</h5>
 								<h5 className="info">
 									{player2Data.trophies}{" "}
@@ -156,7 +156,7 @@ export default function Home() {
 										🏆
 									</span>
 								</h5>
-								<h1 className="ratio">
+								<h1 className="ratio bold">
 									{(
 										player2Data.donations / player2Data.donationsReceived
 									).toFixed(2)}
