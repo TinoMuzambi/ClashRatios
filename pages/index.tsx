@@ -1,19 +1,32 @@
 import { GetStaticProps } from 'next'
 
 type Props = {
-    data: string
+    data: any
   }
 
 export default function Home({data} : Props) {
   return (
-    <h1>Hello {data}</h1>
+    <h1>Hello {data.name}</h1>
   )
 }
 
 export const getStaticProps: GetStaticProps = async () => {
+  let res
+  let tag = "L98JC2LG";
+		tag = tag.replace("#", "");
+		const URL = `https://wwc-server.herokuapp.com/api/player/${tag}`;
+		try {
+			const result = await fetch(URL);
+      res = await result.json();
+		} catch (error) {
+			console.error(error);
+			alert("Please try a different tag.");
+		} finally {
+
+		}
   return {
     props: {
-      data: "Tino"
+      data: res
     }
   }
 }
