@@ -19,12 +19,12 @@ export default function Home() {
 	const [player2Data, setPlayer2Data] = useState({});
 	const [loading, setLoading] = useState(true);
 
-	useEffect(() => {
-		const timer = setTimeout(() => {
-			setLoading(false);
-		}, 3000);
-		return () => clearTimeout(timer);
-	}, []);
+	// useEffect(() => {
+	// 	const timer = setTimeout(() => {
+	// 		setLoading(false);
+	// 	}, 3000);
+	// 	return () => clearTimeout(timer);
+	// }, []);
 
 	const submitHandler = async (e: any) => {
 		e.preventDefault();
@@ -39,8 +39,6 @@ export default function Home() {
 		} catch (error) {
 			console.error(error);
 			alert("Please try a different tag.");
-		} finally {
-			setLoading(false);
 		}
 		tag = player2Tag.trim();
 		tag = tag.replace("#", "");
