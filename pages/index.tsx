@@ -5,7 +5,7 @@ type PlayerData = {
 	data: {
 		tag: string;
 		name: string;
-		explevel: number;
+		xp: number;
 		trophies: number;
 		donations: number;
 		donationsReceived: number;
@@ -18,6 +18,7 @@ export default function Home() {
 	const [playerData, setPlayerData] = useState<PlayerData | {}>({});
 	const [player2Data, setPlayer2Data] = useState<PlayerData | {}>({});
 	const [loading, setLoading] = useState<Boolean>(true);
+	const [fetching, setFetching] = useState<Boolean>(false);
 
 	// useEffect(() => {
 	// 	const timer = setTimeout(() => {
@@ -29,6 +30,7 @@ export default function Home() {
 	const submitHandler = async (e: any) => {
 		e.preventDefault();
 		setLoading(true);
+		setFetching(true);
 		let tag = playerTag.trim();
 		tag = tag.replace("#", "");
 		let URL = `https://clash-ratios.herokuapp.com/api/player/${tag}`;
@@ -88,74 +90,76 @@ export default function Home() {
 					</button>
 				</form>
 			</header>
-			<main>
-				{loading ? (
-					<h3 className="loader">Calculating...</h3>
-				) : (
-					<section className="cards">
-						<div className="card first">
-							<h3 className="title">{playerData.tag}</h3>
-							<h5 className="info">{playerData.name}</h5>
-							<h5 className="info">{playerData.expLevel}</h5>
-							<h5 className="info">
-								{playerData.trophies}{" "}
-								<span role="img" aria-label="trophy">
-									🏆
-								</span>
-							</h5>
-							<h1 className="ratio">
-								{(playerData.donations / playerData.donationsReceived).toFixed(
-									2
-								)}
-							</h1>
-							<div className="ratios">
-								<p className="calc">
-									{playerData.donations}{" "}
-									<span role="img" aria-label="up">
-										👆
+			{fetching && (
+				<main>
+					{loading ? (
+						<h3 className="loader">Calculating...</h3>
+					) : (
+						<section className="cards">
+							<div className="card first">
+								<h3 className="title">{playerData.tag}</h3>
+								<h5 className="info">{playerData.name}</h5>
+								<h5 className="info">{playerData.xp}</h5>
+								<h5 className="info">
+									{playerData.trophies}{" "}
+									<span role="img" aria-label="trophy">
+										🏆
 									</span>
-								</p>
-								<p className="calc">
-									{playerData.donationsReceived}{" "}
-									<span role="img" aria-label="down">
-										👇
-									</span>
-								</p>
+								</h5>
+								<h1 className="ratio">
+									{(
+										playerData.donations / playerData.donationsReceived
+									).toFixed(2)}
+								</h1>
+								<div className="ratios">
+									<p className="calc">
+										{playerData.donations}{" "}
+										<span role="img" aria-label="up">
+											👆
+										</span>
+									</p>
+									<p className="calc">
+										{playerData.donationsReceived}{" "}
+										<span role="img" aria-label="down">
+											👇
+										</span>
+									</p>
+								</div>
 							</div>
-						</div>
-						<div className="card second">
-							<h3 className="title">{player2Data.tag}</h3>
-							<h5 className="info">{player2Data.name}</h5>
-							<h5 className="info">{player2Data.expLevel}</h5>
-							<h5 className="info">
-								{player2Data.trophies}{" "}
-								<span role="img" aria-label="trophy">
-									🏆
-								</span>
-							</h5>
-							<h1 className="ratio">
-								{(
-									player2Data.donations / player2Data.donationsReceived
-								).toFixed(2)}
-							</h1>
-							<div className="ratios">
-								<p className="calc">
-									{player2Data.donations}{" "}
-									<span role="img" aria-label="up">
-										👆
+							<div className="card second">
+								<h3 className="title">{player2Data.tag}</h3>
+								<h5 className="info">{player2Data.name}</h5>
+								<h5 className="info">{player2Data.xp}</h5>
+								<h5 className="info">
+									{player2Data.trophies}{" "}
+									<span role="img" aria-label="trophy">
+										🏆
 									</span>
-								</p>
-								<p className="calc">
-									{player2Data.donationsReceived}{" "}
-									<span role="img" aria-label="down">
-										👇
-									</span>
-								</p>
+								</h5>
+								<h1 className="ratio">
+									{(
+										player2Data.donations / player2Data.donationsReceived
+									).toFixed(2)}
+								</h1>
+								<div className="ratios">
+									<p className="calc">
+										{player2Data.donations}{" "}
+										<span role="img" aria-label="up">
+											👆
+										</span>
+									</p>
+									<p className="calc">
+										{player2Data.donationsReceived}{" "}
+										<span role="img" aria-label="down">
+											👇
+										</span>
+									</p>
+								</div>
 							</div>
-						</div>
-					</section>
-				)}
-			</main>
+						</section>
+					)}
+				</main>
+			)}
 		</>
 	);
 }
