@@ -3,6 +3,7 @@
 	padding: 0;
 	box-sizing: border-box;
 	font-family: sans-serif;
+	transition: all 0.5s ease-in-out;
 }
 
 $legend: rgb(139, 87, 254);
@@ -42,6 +43,11 @@ header {
 				outline: none;
 				padding: 1rem;
 				font-family: inherit;
+
+				&:focus,
+				&:hover {
+					box-shadow: 0 0 5px 1px rgba($color: $champions, $alpha: 1);
+				}
 			}
 		}
 
@@ -52,6 +58,11 @@ header {
 			padding: 1rem;
 			font-family: inherit;
 			cursor: pointer;
+
+			&:focus,
+			&:hover {
+				box-shadow: inset 0 0 5px 1px rgba($color: $champions, $alpha: 1);
+			}
 		}
 	}
 }

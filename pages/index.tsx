@@ -1,4 +1,5 @@
 import { GetStaticProps } from 'next'
+import {useState} from "react"
 
 type Props = {
     data: {
@@ -12,6 +13,9 @@ type Props = {
   }
 
 export default function Home() {
+  const [playerData, setPlayerData] = useState({})
+  const [player2Data, setPlayer2Data] = useState({})
+  const [loading, setLoading] = useState(true)
   return (
    <>
    <header>
