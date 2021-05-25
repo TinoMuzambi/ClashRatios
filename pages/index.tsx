@@ -11,7 +11,21 @@ type PlayerData = {
 	donationsReceived: number;
 };
 
-export default function Home({ title, description, keywords, url, image }) {
+type Props = {
+	title: string;
+	description: string;
+	keywords: string[];
+	url: string;
+	image: string;
+};
+
+export default function Home({
+	title,
+	description,
+	keywords,
+	url,
+	image,
+}: Props) {
 	const [playerTag, setPlayerTag] = useState<string>("");
 	const [player2Tag, setPlayer2Tag] = useState<string>("");
 	const [playerData, setPlayerData] = useState<PlayerData | {}>({});
