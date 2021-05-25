@@ -19,7 +19,7 @@ $none: rgb(137, 141, 142);
 body {
 	min-height: 100vh;
 	background-image: url("https://cdn.supercell.com/supercell.com/201105180339/supercell.com/files/og_clashofclans.jpg");
-	background-repeat: repeat;
+	// background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
 	display: grid;
@@ -27,6 +27,8 @@ body {
 }
 
 header {
+	margin-top: 2rem;
+
 	.form {
 		display: flex;
 		flex-direction: column;
@@ -37,6 +39,10 @@ header {
 			display: flex;
 			align-items: center;
 			gap: 1rem;
+
+			@media screen and (max-width: 700px) {
+				flex-direction: column;
+			}
 
 			input {
 				border: none;
@@ -80,7 +86,12 @@ main {
 
 	.cards {
 		display: flex;
+		justify-content: center;
 		gap: 2rem;
+
+		@media screen and (max-width: 700px) {
+			flex-direction: column;
+		}
 
 		.card {
 			background: $champions;
@@ -103,10 +114,18 @@ main {
 				&.winner {
 					transform: scale(1.5) translate(-2rem, 2rem);
 					animation: flex 3s infinite alternate;
+
+					@media screen and (max-width: 700px) {
+						transform: scale(1.5) translate(0, 3rem);
+					}
 				}
 
 				&.loser {
 					transform: translate(-2rem, 2rem);
+
+					@media screen and (max-width: 700px) {
+						transform: translate(0, 0);
+					}
 				}
 			}
 
@@ -126,10 +145,18 @@ main {
 					transform: scale(1.5) translate(2rem, 2rem);
 
 					animation: flex 3s infinite alternate;
+
+					@media screen and (max-width: 700px) {
+						transform: scale(1.5) translate(0, 2rem);
+					}
 				}
 
 				&.loser {
 					transform: translate(2rem, 2rem);
+
+					@media screen and (max-width: 700px) {
+						transform: translate(0, 8rem);
+					}
 				}
 			}
 
