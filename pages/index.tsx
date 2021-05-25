@@ -14,7 +14,7 @@ export const getStaticProps: GetStaticProps = async () => {
   let res
   let tag = "L98JC2LG";
 		tag = tag.replace("#", "");
-		const URL = `https://wwc-server.herokuapp.com/api/player/${tag}`;
+		const URL = `https://clash-ratios.herokuapp.com/api/player/${tag}`;
 		try {
 			const result = await fetch(URL);
       res = await result.json();
