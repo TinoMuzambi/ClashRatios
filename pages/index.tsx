@@ -1,7 +1,7 @@
 import { GetStaticProps } from "next";
 import { useState, useEffect } from "react";
 
-type Props = {
+type PlayerData = {
 	data: {
 		tag: string;
 		name: string;
@@ -15,8 +15,8 @@ type Props = {
 export default function Home() {
 	const [playerTag, setPlayerTag] = useState<string>("");
 	const [player2Tag, setPlayer2Tag] = useState<string>("");
-	const [playerData, setPlayerData] = useState<Props | {}>({});
-	const [player2Data, setPlayer2Data] = useState<Props | {}>({});
+	const [playerData, setPlayerData] = useState<PlayerData | {}>({});
+	const [player2Data, setPlayer2Data] = useState<PlayerData | {}>({});
 	const [loading, setLoading] = useState<Boolean>(true);
 
 	// useEffect(() => {
@@ -90,24 +90,32 @@ export default function Home() {
 					<section className="cards">
 						<div className="card first">
 							<h3 className="title">{playerData.tag}</h3>
-							<h5 className="info">PlayerName</h5>
-							<h5 className="info">PlayerXP</h5>
-							<h5 className="info">PlayerTrophies</h5>
-							<h1 className="ratio">DonationsRatio</h1>
+							<h5 className="info">{playerData.name}</h5>
+							<h5 className="info">{playerData.expLevel}</h5>
+							<h5 className="info">{playerData.trophies}</h5>
+							<h1 className="ratio">
+								{(playerData.donations / playerData.donationsReceived).toFixed(
+									2
+								)}
+							</h1>
 							<div className="ratios">
-								<p className="calc">Donations</p>
-								<p className="calc">DonationsReceived</p>
+								<p className="calc">{playerData.donations}</p>
+								<p className="calc">{playerData.donationsReceived}</p>
 							</div>
 						</div>
 						<div className="card second">
-							<h3 className="title">PlayerTag</h3>
-							<h5 className="info">PlayerName</h5>
-							<h5 className="info">PlayerXP</h5>
-							<h5 className="info">PlayerTrophies</h5>
-							<h1 className="ratio">DonationsRatio</h1>
+							<h3 className="title">{player2Data.tag}</h3>
+							<h5 className="info">{player2Data.name}</h5>
+							<h5 className="info">{player2Data.expLevel}</h5>
+							<h5 className="info">{player2Data.trophies}</h5>
+							<h1 className="ratio">
+								{(
+									player2Data.donations / player2Data.donationsReceived
+								).toFixed(2)}
+							</h1>
 							<div className="ratios">
-								<p className="calc">Donations</p>
-								<p className="calc">DonationsReceived</p>
+								<p className="calc">{player2Data.donations}</p>
+								<p className="calc">{player2Data.donationsReceived}</p>
 							</div>
 						</div>
 					</section>
