@@ -24,10 +24,14 @@ export default function Home() {
 		return () => clearTimeout(timer);
 	}, []);
 
+	const submitHandler = (e: any) => {
+		e.preventDefault();
+	};
+
 	return (
 		<>
 			<header>
-				<form className="form">
+				<form className="form" onSubmit={submitHandler}>
 					<div className="inputs">
 						<input type="text" required placeholder="Enter player 1️⃣ tag " />
 						<p className="vs">vs</p>
