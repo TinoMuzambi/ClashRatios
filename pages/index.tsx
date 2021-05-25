@@ -16,9 +16,11 @@ export default function Home() {
    <>
    <header>
      <form className="form">
-       <input type="text" required placeholder="Enter first player's tag 1️⃣" />
+      <div className="inputs">
+      <input type="text" required placeholder="Enter first player's tag 1️⃣" />
        <p className="vs">vs</p>
        <input type="text" required placeholder="Enter second player's tag 2️⃣" />
+      </div>
       <button type="submit">Compare Ratios!🥊</button>
      </form>
    </header>

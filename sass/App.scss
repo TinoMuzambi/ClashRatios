@@ -21,384 +21,45 @@ body {
 	background-repeat: repeat;
 	background-position: center;
 	background-size: cover;
+	display: grid;
+	place-content: center;
 }
 
-.logo {
-	position: absolute;
-	color: white;
-	display: flex;
-	right: 0;
-	margin-top: 1rem;
-	overflow: hidden;
-	font-size: 0.8rem;
-
-	h1 {
-		text-align: right;
-		background: rgba($color: black, $alpha: 0.7);
-		padding: 1rem;
-		border-radius: 5px 0 0 5px;
-	}
-}
-
-.info-wrapper {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	padding-top: 5rem;
-	width: 100%;
-	text-align: center;
-
-	.info {
-		background: rgba($color: black, $alpha: 0.7);
-		padding: 1rem;
-		border-radius: 5px;
-		color: white;
-		width: 35%;
-	}
-}
-
-.forms {
-	display: flex;
-	flex-wrap: wrap;
-	margin-top: 2rem;
-	gap: 2rem;
-	justify-content: center;
-
-	.motion-wrap {
+header {
+	.form {
 		display: flex;
-		gap: 2rem;
-
-		.card {
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+		.inputs {
 			display: flex;
-			flex-direction: column;
-			width: 350px;
-			justify-content: center;
-			background: rgba($color: white, $alpha: 0.7);
-			box-shadow: 0px 0px 8px rgba($color: lightblue, $alpha: 0.5);
-			max-height: calc(100vh - 14rem);
-			overflow: hidden;
-			border-radius: 5px;
-
-			&.double {
-				width: 700px;
-			}
-
-			.center {
-				display: flex;
-				flex-direction: column;
-				align-items: center;
-				text-align: center;
-			}
-
-			.content {
-				overflow: auto;
-				display: flex;
-				flex-direction: column;
-				padding: 2rem;
-
-				.title {
-					font-weight: normal;
-					align-self: flex-start;
-					margin-bottom: 1rem;
-					text-transform: capitalize;
-				}
-
-				img {
-					width: 40%;
-					object-fit: contain;
-				}
-
-				.form {
-					display: flex;
-					flex-direction: column;
-					gap: 2rem;
-					margin-bottom: 2rem;
-
-					.label {
-						text-transform: capitalize;
-					}
-
-					.tag {
-						margin-top: -1.5rem;
-						border-radius: 5px;
-						outline: solid 1px black;
-						border: none;
-						font-family: inherit;
-						padding: 0.5rem;
-						background: none;
-
-						&:hover,
-						&:focus {
-							box-shadow: 0px 0px 8px rgba($color: black, $alpha: 0.5);
-						}
-					}
-
-					.send {
-						background: none;
-						outline: none;
-						font-family: inherit;
-						padding: 0.5rem;
-						border: solid 1px black;
-						cursor: pointer;
-
-						&:hover,
-						&:focus {
-							box-shadow: 0px 0px 8px rgba($color: black, $alpha: 0.5);
-						}
-					}
-				}
-
-				.spinner {
-					margin: 0 auto;
-					font-size: 2em;
-					animation: spinLogo 2s infinite ease-out;
-
-					@keyframes spinLogo {
-						from {
-							transform: rotate(0deg);
-						}
-						to {
-							transform: rotate(359deg);
-						}
-					}
-				}
-				.json {
-					resize: none;
-					width: 100% !important;
-					height: 30rem;
-					background: none;
-					border-radius: 0;
-					border: solid 1px black;
-					outline: none;
-
-					&:hover,
-					&:focus {
-						box-shadow: 0px 0px 8px rgba($color: black, $alpha: 0.5);
-					}
-				}
-				.flex {
-					display: flex;
-					align-items: center;
-					gap: 0.2rem;
-
-					.xp {
-						padding: 0.3rem;
-						margin-top: -1.5rem;
-						font-size: 0.7rem;
-						color: white;
-						border-radius: 10000px;
-
-						&.legend {
-							background: $legend;
-						}
-						&.titan {
-							background: $titan;
-						}
-						&.champions {
-							background: $champions;
-						}
-						&.masters {
-							background: $masters;
-						}
-						&.crystal {
-							background: $crystal;
-						}
-						&.gold {
-							background: $gold;
-						}
-						&.silver {
-							background: $silver;
-						}
-						&.bronze {
-							background: $bronze;
-						}
-						&.none {
-							background: $none;
-						}
-					}
-				}
-
-				ul {
-					list-style-type: none;
-					display: flex;
-					justify-content: center;
-					flex-wrap: wrap;
-					margin-top: 1rem;
-
-					li {
-						display: flex;
-						flex-direction: column;
-						align-items: center;
-						justify-content: center;
-						background: rgba(51, 51, 51, 0.9);
-						color: white;
-						margin: 0.4rem;
-						height: 5rem;
-						width: 7rem;
-						padding: 0.5rem;
-						border-radius: 0.5rem;
-
-						span {
-							color: white;
-							font-size: 1.3rem;
-							font-weight: 900;
-
-							&.legend {
-								color: $legend;
-							}
-							&.titan {
-								color: $titan;
-							}
-							&.champions {
-								color: $champions;
-							}
-							&.masters {
-								color: $masters;
-							}
-							&.crystal {
-								color: $crystal;
-							}
-							&.gold {
-								color: $gold;
-							}
-							&.silver {
-								color: $silver;
-							}
-							&.bronze {
-								color: $bronze;
-							}
-							&.none {
-								color: $none;
-							}
-						}
-					}
-				}
-
-				.troops-title {
-					margin: 1rem 0;
-				}
-
-				.troops {
-					display: flex;
-					align-items: center;
-					justify-content: center;
-					flex-wrap: wrap;
-					gap: 2rem;
-
-					.troop {
-						&:hover .level {
-							clip-path: polygon(0 1%, 100% 0%, 100% 100%, 0 100%);
-						}
-
-						.troop-image {
-							width: 100px;
-							object-fit: contain;
-						}
-					}
-
-					.name,
-					.level {
-						background: rgb(51, 51, 51);
-						padding: 0.5rem;
-
-						&.legend {
-							color: $legend;
-						}
-						&.titan {
-							color: $titan;
-						}
-						&.champions {
-							color: $champions;
-						}
-						&.masters {
-							color: $masters;
-						}
-						&.crystal {
-							color: $crystal;
-						}
-						&.gold {
-							color: $gold;
-						}
-						&.silver {
-							color: $silver;
-						}
-						&.bronze {
-							color: $bronze;
-						}
-						&.none {
-							color: $none;
-						}
-					}
-
-					.level {
-						clip-path: polygon(0 1%, 100% 0%, 100% 0, 0 0);
-						transition: clip-path 1s;
-					}
-				}
-			}
+			gap: 1rem;
 		}
 	}
 }
 
-@media only screen and (max-width: 768px) {
-	.forms {
-		.motion-wrap {
-			flex-direction: column;
+.cards {
+	display: flex;
+	gap: 2rem;
 
-			.card {
-				width: 500px;
+	.card {
+		background: white;
+		padding: 2rem;
+		clip-path: polygon(
+			16% 0,
+			100% 0,
+			100% 20%,
+			100% 80%,
+			84% 100%,
+			0 100%,
+			0% 80%,
+			1% 19%
+		);
+		text-align: center;
 
-				&.double {
-					width: 500px;
-				}
-
-				.troops {
-					.troop {
-						.level {
-							clip-path: polygon(0 1%, 100% 0%, 100% 100%, 0 100%);
-						}
-					}
-				}
-			}
-		}
-	}
-}
-
-@media only screen and (max-width: 500px) {
-	body {
-		background-repeat: repeat-y;
-		overflow: scroll;
-	}
-
-	.info-wrapper {
-		padding-top: 6rem;
-		.info {
-			width: 350px;
-		}
-	}
-
-	.forms {
-		.motion-wrap {
-			.card {
-				width: 300px;
-
-				&.double {
-					width: 300px;
-				}
-			}
-		}
-	}
-}
-@media only screen and (max-width: 320px) {
-	body {
-		background-repeat: repeat-y;
-		overflow: scroll;
-	}
-
-	.info-wrapper {
-		padding-top: 6rem;
-		.info {
-			width: 256px;
+		.ratios {
+			display: flex;
+			gap: 1rem;
 		}
 	}
 }
