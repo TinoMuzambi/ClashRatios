@@ -41,6 +41,36 @@ body {
 .header {
 	margin-top: 2rem;
 
+	.info {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		position: absolute;
+		background: white;
+		padding: 1rem;
+		top: 2rem;
+		right: 0.5rem;
+		width: 15rem;
+		clip-path: polygon(
+			16% 0,
+			100% 0,
+			100% 20%,
+			100% 80%,
+			84% 100%,
+			0 100%,
+			0% 80%,
+			1% 19%
+		);
+		border: 5px solid $legend;
+
+		@media screen and (max-width: 700px) {
+			width: 20rem;
+		}
+		@media screen and (max-width: 400px) {
+			width: 90%;
+		}
+	}
+
 	.form {
 		display: flex;
 		flex-direction: column;

@@ -121,6 +121,19 @@ export default function Home({
 				<link rel="preconnect" href="https://www.google-analytics.com" />
 			</Head>
 			<header className="header">
+				<div className="info">
+					<h1 className="title">Getting started</h1>
+					<p className="text">
+						Enter two player tags to compare donations to donations received and
+						see who comes out on top!{" "}
+						<span role="img" aria-label="muscle">
+							💪
+						</span>
+					</p>
+					<p className="sample">Here are some sample tags:</p>
+					<p className="tag1">88V8P9UR2</p>
+					<p className="tag1">L98JC2LG</p>
+				</div>
 				<form className="form" onSubmit={submitHandler}>
 					<div className="inputs">
 						<input
