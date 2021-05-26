@@ -19,11 +19,14 @@ export default function Home({
 	const [fetching, setFetching] = useState(false);
 
 	useEffect(() => {
-		let timer: any;
+		let timer: ReturnType<typeof setTimeout>;
 		if (!loading) {
+			// Calculate both player ratios.
 			const playerRatio = playerData.donationsReceived / playerData.donations;
 			const player2Ratio =
 				player2Data.donationsReceived / player2Data.donations;
+
+			// After two seconds apply relevant class names for higher and lower ratios.
 			timer = setTimeout(() => {
 				if (playerRatio < player2Ratio) {
 					document.querySelectorAll(".card").forEach((el) => {
@@ -56,7 +59,7 @@ export default function Home({
 		let URL = `https://clash-ratios.herokuapp.com/api/player/${tag}`;
 		try {
 			const result = await fetch(URL);
-			const data = await result.json();
+			const data: PlayerData = await result.json();
 			setPlayerData(data);
 		} catch (error) {
 			console.error(error);
@@ -67,7 +70,7 @@ export default function Home({
 		URL = `https://clash-ratios.herokuapp.com/api/player/${tag}`;
 		try {
 			const result = await fetch(URL);
-			const data = await result.json();
+			const data: PlayerData = await result.json();
 			setPlayer2Data(data);
 		} catch (error) {
 			console.error(error);
