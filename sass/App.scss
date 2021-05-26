@@ -120,6 +120,10 @@ body {
 	.loader {
 		color: $bronze;
 		font-size: 3rem;
+		background: white;
+		padding: 0.5rem;
+		border-radius: 1000px;
+		animation: clip 1.5s infinite alternate-reverse ease-in-out;
 	}
 
 	.cards {
@@ -232,5 +236,14 @@ footer {
 	to {
 		background: rgb(255, 124, 80);
 		border-color: $titan;
+	}
+}
+
+@keyframes clip {
+	from {
+		clip-path: circle(0% at 0 50%);
+	}
+	to {
+		clip-path: circle(150% at 0 100%);
 	}
 }
