@@ -1,4 +1,3 @@
-// import { GetStaticProps } from "next";
 import { useState, useEffect } from "react";
 import Head from "next/head";
 
@@ -242,23 +241,3 @@ Home.defaultProps = {
 	image: "https://a.storyblok.com/f/105639/512x512/03489159d5/logo512.png",
 	url: "https://clashratios.tinomuzambi.com/",
 };
-
-// export const getStaticProps: GetStaticProps = async () => {
-// 	let res;
-// 	let tag = "L98JC2LG";
-// 	tag = tag.replace("#", "");
-// 	const URL = `https://clash-ratios.herokuapp.com/api/player/${tag}`;
-// 	try {
-// 		const result = await fetch(URL);
-// 		res = await result.json();
-// 	} catch (error) {
-// 		console.error(error);
-// 		alert("Please try a different tag.");
-// 	} finally {
-// 	}
-// 	return {
-// 		props: {
-// 			data: res,
-// 		},
-// 	};
-// };
