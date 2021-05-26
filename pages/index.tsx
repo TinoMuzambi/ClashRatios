@@ -131,8 +131,18 @@ export default function Home({
 						</span>
 					</p>
 					<p className="sample">Here are some sample tags:</p>
-					<p className="tag1">88V8P9UR2</p>
-					<p className="tag1">L98JC2LG</p>
+					<p className="tag">
+						<span role="img" aria-label="one">
+							1️⃣
+						</span>
+						&nbsp; 88V8P9UR2
+					</p>
+					<p className="tag">
+						<span role="img" aria-label="two">
+							2️⃣
+						</span>
+						&nbsp; L98JC2LG
+					</p>
 				</div>
 				<form className="form" onSubmit={submitHandler}>
 					<div className="inputs">
