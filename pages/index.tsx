@@ -240,7 +240,7 @@ Home.defaultProps = {
 	description:
 		"Compare your Clash of Clans donations vs donations received ratios with your friend and see who comes out on top!🏆",
 	image: "https://a.storyblok.com/f/105639/512x512/03489159d5/logo512.png",
-	url: "https://tinomuzambi.com",
+	url: "https://clashratios.tinomuzambi.com/",
 };
 
 // export const getStaticProps: GetStaticProps = async () => {
