@@ -125,6 +125,7 @@ export default function Home({
 				<link rel="preconnect" href="https://a.storyblok.com" />
 				<link rel="preconnect" href="https://www.google-analytics.com" />
 			</Head>
+
 			<header className="header">
 				<div className="info">
 					<h1 className="title">How it works</h1>

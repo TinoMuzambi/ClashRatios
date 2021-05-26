@@ -63,7 +63,9 @@ body {
 		);
 		border: 5px solid $legend;
 
-		@media screen and (max-width: 700px) {
+		@media screen and (max-width: 768px) {
+			position: static;
+			margin: 2rem auto;
 			width: 20rem;
 		}
 		@media screen and (max-width: 400px) {
