@@ -33,7 +33,7 @@ export default function Home({
 
 			// After two seconds apply relevant class names for higher and lower ratios.
 			timer = setTimeout(() => {
-				if (playerRatio < player2Ratio) {
+				if (playerRatio > player2Ratio) {
 					document.querySelectorAll(".card").forEach((el) => {
 						if (el.classList.contains("first")) {
 							el.classList.add("winner");
