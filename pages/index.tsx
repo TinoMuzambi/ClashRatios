@@ -135,7 +135,7 @@ export default function Home({
 							💪
 						</span>
 					</p>
-					<p className="sample">Here are some sample tags:</p>
+					<p className="sample">Here are some sample tags to try it out:</p>
 					<p className="tag">
 						<span role="img" aria-label="one">
 							1️⃣
