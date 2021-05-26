@@ -122,7 +122,7 @@ export default function Home({
 			</Head>
 			<header className="header">
 				<div className="info">
-					<h1 className="title">Getting started</h1>
+					<h1 className="title">How it works</h1>
 					<p className="text">
 						Enter two player tags to compare donations to donations received and
 						see who comes out on top!{" "}
