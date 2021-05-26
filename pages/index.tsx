@@ -117,10 +117,11 @@ export default function Home({
 				<link rel="preconnect" href="https://a.storyblok.com" />
 				<link rel="preconnect" href="https://www.google-analytics.com" />
 			</Head>
-			<header>
+			<header className="header">
 				<form className="form" onSubmit={submitHandler}>
 					<div className="inputs">
 						<input
+							className="tag"
 							type="text"
 							required
 							minLength={8}
@@ -131,6 +132,7 @@ export default function Home({
 						/>
 						<p className="vs">vs</p>
 						<input
+							className="tag"
 							type="text"
 							required
 							minLength={8}
@@ -140,7 +142,7 @@ export default function Home({
 							onChange={(e) => setPlayer2Tag(e.target.value)}
 						/>
 					</div>
-					<button type="submit">
+					<button className="submit" type="submit">
 						Compare Ratios!
 						<span role="img" aria-label="boxing glove">
 							🥊
@@ -149,7 +151,7 @@ export default function Home({
 				</form>
 			</header>
 			{fetching && (
-				<main>
+				<main className="main">
 					{loading ? (
 						<h3 className="loader">Calculating...</h3>
 					) : (
