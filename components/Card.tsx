@@ -1,6 +1,32 @@
+import { useRef, useLayoutEffect } from "react";
+import { animate } from "framer-motion";
+
 import { PlayerData } from "../interfaces";
 
 const Card = ({ playerData, cardClass }: PlayerData | Boolean | any) => {
+	// Animated counter that returns animated p tag.
+	const Counter = ({ from, to }: any) => {
+		const nodeRef = useRef<HTMLHeadingElement>(null);
+
+		useLayoutEffect(() => {
+			let controls: any;
+			if (null !== nodeRef.current) {
+				let node = nodeRef.current;
+
+				controls = animate(from, to, {
+					duration: 1,
+					onUpdate(value) {
+						node.textContent = value.toFixed(2);
+					},
+				});
+			}
+
+			return () => controls.stop();
+		}, [from, to]);
+
+		return <h1 className="ratio" ref={nodeRef} />;
+	};
+
 	return (
 		<div className={`card ${cardClass ? "first" : "second"}`}>
 			<h3 className="info bold">{playerData.name}</h3>
@@ -12,12 +38,20 @@ const Card = ({ playerData, cardClass }: PlayerData | Boolean | any) => {
 					🏆
 				</span>
 			</h5>
-			<h1 className="ratio">
+			<Counter
+				from={0}
+				to={
+					playerData.donationsReceived === 0
+						? 0
+						: playerData.donations / playerData.donationsReceived
+				}
+			/>
+			{/* <h1 className="ratio">
 				{(playerData.donationsReceived === 0
 					? 0
 					: playerData.donations / playerData.donationsReceived
 				).toFixed(2)}
-			</h1>
+			</h1> */}
 			<div className="ratios">
 				<p className="calc">
 					{playerData.donations}{" "}
