@@ -22,9 +22,14 @@ export default function Home({
 		let timer: ReturnType<typeof setTimeout>;
 		if (!loading) {
 			// Calculate both player ratios.
-			const playerRatio = playerData.donationsReceived / playerData.donations;
+			const playerRatio =
+				playerData.donations === 0
+					? 0
+					: playerData.donationsReceived / playerData.donations;
 			const player2Ratio =
-				player2Data.donationsReceived / player2Data.donations;
+				player2Data.donations === 0
+					? 0
+					: player2Data.donationsReceived / player2Data.donations;
 
 			// After two seconds apply relevant class names for higher and lower ratios.
 			timer = setTimeout(() => {
