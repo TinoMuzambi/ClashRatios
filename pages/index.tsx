@@ -52,6 +52,9 @@ export default function Home({
 
 	const submitHandler = async (e: any) => {
 		e.preventDefault();
+		if (playerTag === player2Tag) {
+			return alert("Please enter two different players.");
+		}
 		setLoading(true);
 		setFetching(true);
 		let tag = playerTag.trim();
