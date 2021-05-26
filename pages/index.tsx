@@ -1,22 +1,6 @@
 import { useState, useEffect } from "react";
 import Head from "next/head";
-
-interface PlayerData {
-	tag: string;
-	name: string;
-	xp: number;
-	trophies: number;
-	donations: number;
-	donationsReceived: number;
-}
-
-type Props = {
-	title: string;
-	description: string;
-	keywords: string;
-	url: string;
-	image: string;
-};
+import { PlayerData, Props } from "../interfaces";
 
 export default function Home({
 	title,
