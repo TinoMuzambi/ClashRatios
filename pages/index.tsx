@@ -84,7 +84,7 @@ export default function Home({
 			console.error(error);
 			alert("Please try a different tag.");
 		} finally {
-			// setLoading(false);
+			setLoading(false);
 		}
 	};
 
