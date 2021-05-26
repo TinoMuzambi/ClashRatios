@@ -6,6 +6,18 @@
 	transition: all 0.5s ease-in-out;
 }
 
+@mixin input {
+	border: none;
+	outline: none;
+	padding: 1rem;
+	font-family: inherit;
+
+	&:focus,
+	&:hover {
+		box-shadow: 0 0 5px 1px rgba($color: $champions, $alpha: 1);
+	}
+}
+
 $legend: rgb(139, 87, 254);
 $titan: rgb(249, 218, 71);
 $champions: rgb(227, 123, 88);
@@ -19,7 +31,6 @@ $none: rgb(137, 141, 142);
 body {
 	min-height: 100vh;
 	background-image: url("https://cdn.supercell.com/supercell.com/201105180339/supercell.com/files/og_clashofclans.jpg");
-	// background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
 	display: grid;
@@ -45,15 +56,7 @@ body {
 			}
 
 			.tag {
-				border: none;
-				outline: none;
-				padding: 1rem;
-				font-family: inherit;
-
-				&:focus,
-				&:hover {
-					box-shadow: 0 0 5px 1px rgba($color: $champions, $alpha: 1);
-				}
+				@include input;
 			}
 
 			.vs {
@@ -63,10 +66,7 @@ body {
 
 		.submit {
 			margin: 1rem 0 2rem 0;
-			border: none;
-			outline: none;
-			padding: 1rem;
-			font-family: inherit;
+			@include input;
 			cursor: pointer;
 
 			&:focus,
