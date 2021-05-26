@@ -13,9 +13,9 @@ const Card = ({ playerData, cardClass }: PlayerData | Boolean | any) => {
 				</span>
 			</h5>
 			<h1 className="ratio">
-				{(playerData.donations === 0
+				{(playerData.donationsReceived === 0
 					? 0
-					: playerData.donationsReceived / playerData.donations
+					: playerData.donations / playerData.donationsReceived
 				).toFixed(2)}
 			</h1>
 			<div className="ratios">
