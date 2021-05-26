@@ -2,19 +2,19 @@
 import { useState, useEffect } from "react";
 import Head from "next/head";
 
-type PlayerData = {
+interface PlayerData {
 	tag: string;
 	name: string;
 	xp: number;
 	trophies: number;
 	donations: number;
 	donationsReceived: number;
-};
+}
 
 type Props = {
 	title: string;
 	description: string;
-	keywords: string[];
+	keywords: string;
 	url: string;
 	image: string;
 };
@@ -26,12 +26,12 @@ export default function Home({
 	url,
 	image,
 }: Props) {
-	const [playerTag, setPlayerTag] = useState<string>("");
-	const [player2Tag, setPlayer2Tag] = useState<string>("");
-	const [playerData, setPlayerData] = useState<PlayerData | {}>({});
-	const [player2Data, setPlayer2Data] = useState<PlayerData | {}>({});
-	const [loading, setLoading] = useState<Boolean>(true);
-	const [fetching, setFetching] = useState<Boolean>(false);
+	const [playerTag, setPlayerTag] = useState("");
+	const [player2Tag, setPlayer2Tag] = useState("");
+	const [playerData, setPlayerData] = useState<PlayerData | any>({});
+	const [player2Data, setPlayer2Data] = useState<PlayerData | any>({});
+	const [loading, setLoading] = useState(true);
+	const [fetching, setFetching] = useState(false);
 
 	useEffect(() => {
 		let timer: any;
