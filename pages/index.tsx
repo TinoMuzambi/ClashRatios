@@ -123,7 +123,6 @@ export default function Home({
 
 				<link rel="preconnect" href="https://api.storyblok.com" />
 				<link rel="preconnect" href="https://a.storyblok.com" />
-				<link rel="preconnect" href="https://www.google-analytics.com" />
 			</Head>
 
 			<header className="header">
