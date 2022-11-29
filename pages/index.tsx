@@ -64,7 +64,7 @@ export default function Home({
 		setFetching(true);
 		let tag = playerTag.trim();
 		tag = tag.replace("#", "");
-		let URL = `https://clash-ratios.herokuapp.com/api/player/${tag}`;
+		let URL = `https://clashratiosserver-production.up.railway.app/api/player/${tag}`;
 		try {
 			const result = await fetch(URL);
 			const data: PlayerData = await result.json();
@@ -75,7 +75,7 @@ export default function Home({
 		}
 		tag = player2Tag.trim();
 		tag = tag.replace("#", "");
-		URL = `https://clash-ratios.herokuapp.com/api/player/${tag}`;
+		URL = `https://clashratiosserver-production.up.railway.app/api/player/${tag}`;
 		try {
 			const result = await fetch(URL);
 			const data: PlayerData = await result.json();
